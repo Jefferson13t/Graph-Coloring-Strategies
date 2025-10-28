@@ -21,6 +21,9 @@ class GeneticAlgorithm(ColoringStrategy):
         self.initial_temperature = initial_temperature
         self.cooling_rate = cooling_rate
 
+    def __str__(self) -> str:
+        return "Genetic Algorithm"
+
     def _create_initial_population(self, graph: Graph, available_colors: list[Color]) -> list[Coloring]:
         
         population = []

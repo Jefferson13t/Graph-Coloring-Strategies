@@ -13,12 +13,14 @@ class BestImprovement(ColoringStrategy):
         self.initial_coloring = initial_coloring
         self.max_iter = max_iter
 
+    def __str__(self) -> str:
+        return "Best Improvement"
+
     def color(self, graph: Graph, colors: list[Color]) -> tuple[Coloring, int]:
         coloring = self.initial_coloring.copy()
         conflicts, _ = get_conflicts(graph, coloring)
 
         for _ in range(self.max_iter):
-            # complete o codigo
 
             best_coloring_improvement = coloring.copy()
             best_improvement = 0

@@ -17,8 +17,8 @@ def get_conflicts(graph: Graph, coloring: Coloring) -> tuple[int, list[str]]:
 
     return len(conflicting), list(conflicting)
 
-def generate_random_coloring(grafo: Graph, cores: list[Color] = ["vermelho", "azul", "verde", "amarelo"]) -> Coloring:
-    coloracao = {}
-    for vertice in grafo.graph.keys():
-        coloracao[vertice] = random.choice(cores)
-    return coloracao
+def generate_random_coloring(graph: Graph, colors: list[Color] = ["vermelho", "azul", "verde", "amarelo"]) -> Coloring:
+    coloring = {}
+    for vertice in graph.graph.keys():
+        coloring[vertice] = random.choice(colors)
+    return coloring

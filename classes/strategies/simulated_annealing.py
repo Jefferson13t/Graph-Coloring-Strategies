@@ -19,6 +19,9 @@ class SimulatedAnnealing(ColoringStrategy):
         self.initial_coloring = initial_coloring
         self.max_iter = max_iter
 
+    def __str__(self) -> str:
+        return "Simulated Annealing"
+
     def _accept_changes(self, new_conflicts: int, conflicts: int, temperature: float):
         if new_conflicts <= conflicts:
             return True

@@ -14,6 +14,9 @@ class FirstImprovementAC(ColoringStrategy):
         self.initial_coloring = initial_coloring
         self.max_iter = max_iter
 
+    def __str__(self) -> str:
+        return "First Improvement AC"
+
     def color(self, graph: Graph, colors: list[Color]) -> tuple[Coloring, int]:
         coloring = self.initial_coloring.copy()
         conflicts, conflicting_vertex = get_conflicts(graph, coloring)

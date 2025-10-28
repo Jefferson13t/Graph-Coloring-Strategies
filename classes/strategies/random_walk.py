@@ -14,6 +14,9 @@ class RandomWalk(ColoringStrategy):
         self.initial_coloring = initial_coloring
         self.max_iter = max_iter
 
+    def __str__(self) -> str:
+        return "Random walk"
+
     def color(self, graph: Graph, colors: list[Color]) -> tuple[Coloring, int]:
         coloring = self.initial_coloring.copy()
         conflicts, _ = get_conflicts(graph, coloring)

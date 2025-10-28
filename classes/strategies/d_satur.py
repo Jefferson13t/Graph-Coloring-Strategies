@@ -11,6 +11,9 @@ class DSatur(ColoringStrategy):
     def __init__(self, max_iter: int) -> None:
         self.max_iter = max_iter
 
+    def __str__(self) -> str:
+        return "DSatur"
+
     def _calculate_saturation(self, graph: Graph, vertex: str, current_coloring: Coloring) -> tuple[int, set[Color]]:
         neighbor_colors = {
             current_coloring[v]
