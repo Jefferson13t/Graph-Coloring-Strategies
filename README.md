@@ -23,7 +23,7 @@ To run this project, follow the steps:
 
 1.  **Clone** the repository to your local machine:
     ```bash
-    git clone [https://github.com/Jefferson13t/Graph-Coloring-Strategies.git](https://github.com/Jefferson13t/Graph-Coloring-Strategies.git)
+    git clone https://github.com/Jefferson13t/Graph-Coloring-Strategies.git
     ```
 2.  **Navigate** to the project directory:
     ```bash
@@ -59,12 +59,12 @@ Each strategy is implemented as a separate class in the classes/ directory that 
 
 The strategies benchmark was executed on a **specific graph instance**, visualized below.
 
-![Graph used int the problem instance](https://github.com/Jefferson13t/Graph-Coloring-Strategies/blob/main/img/instance_problem.png?raw=true)
+![Graph used int the problem instance](img/instance_problem.png)
 
 ### Benchmark Analysis
 
 The benchmark plot compares the **execution time** and the **number of colors** used by the different strategies to color the graph instance above. The results highlight the **efficiency** of the heuristics relative to the exact methods for this instance:
 
-![Benchmark of the result](https://github.com/Jefferson13t/Graph-Coloring-Strategies/blob/main/img/benchmark.png?raw=true)
+![Benchmark of the result](img/benchmark.png)
 
 Feel free to explore the implementations and contribute with new strategies!
