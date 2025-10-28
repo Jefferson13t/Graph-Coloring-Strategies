@@ -53,6 +53,20 @@ The repository implements several graph coloring strategies, including:
 
 Each strategy is implemented as a separate class in the classes/ directory that inherits from the abstract ColoringStrategy class, allowing for easy extension and modification.
 
+## Benchmarking Class
+
+The ColoringStrategiesBenchmark class is responsible for evaluating the performance of the implemented graph coloring strategies. It runs each strategy multiple times, measures the execution time, and plots the results to visualize how quickly each strategy finds solutions.
+
+### Key Features:
+* **Execution Time Measurement:**
+Each strategy is applied to a given graph instance with a set of colors, and the time taken to compute a solution is recorded.
+
+* **Multiple Runs:**
+Strategies can be evaluated over multiple iterations to analyze variability and performance consistency.
+
+* **Visualization:**
+The class generates plots showing the percentage of solutions found over time, allowing for a clear comparison between strategies. The plots are saved as images for reference.
+
 ## Results
 
 ### Instance Graph
