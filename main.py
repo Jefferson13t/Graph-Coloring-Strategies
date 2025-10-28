@@ -53,10 +53,12 @@ def main() -> int:
     coloringStrategiesBenchmark = ColoringStrategiesBenchmark() 
 
     NUMBER_OF_RUNS = 20
+    OUTPUT_FILE = "img/benchmark.png"
     coloringStrategiesBenchmark.evaluate_strategies(
         graph,
         COLORS,
         NUMBER_OF_RUNS,
+        OUTPUT_FILE,
         [
             randomWalk,
             bestImprovement,

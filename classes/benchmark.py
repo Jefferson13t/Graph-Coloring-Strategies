@@ -14,7 +14,7 @@ class ColoringStrategiesBenchmark:
         return end_time - start_time
 
 
-    def _plot_execution_times(self, strategies: list[ColoringStrategy], times: dict[ColoringStrategy, list[float]]) -> None:
+    def _plot_execution_times(self, strategies: list[ColoringStrategy], times: dict[ColoringStrategy, list[float]], filename: str) -> None:
         plt.figure(figsize=(10, 6))
 
         all_times = np.concatenate([times[strategy] for strategy in strategies if len(times[strategy]) > 0])
@@ -40,10 +40,11 @@ class ColoringStrategiesBenchmark:
         plt.legend()
         plt.grid(True)
         plt.tight_layout()
+        plt.savefig(filename)
         plt.show()
 
 
-    def evaluate_strategies(self, graph: Graph, colors: list[Color], runs: int, strategies: list[ColoringStrategy]) -> None:
+    def evaluate_strategies(self, graph: Graph, colors: list[Color], runs: int, filename: str, strategies: list[ColoringStrategy]) -> None:
         strategy_times: dict[ColoringStrategy, list[float]] = {}
 
         for strategy in strategies:
@@ -55,4 +56,4 @@ class ColoringStrategiesBenchmark:
                 time = self._calculate_strategy_execution_time(strategy, graph, colors)
                 strategy_times[strategy].append(time)
 
-        self._plot_execution_times(strategies, strategy_times)
+        self._plot_execution_times(strategies, strategy_times, filename)
