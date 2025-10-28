@@ -48,8 +48,8 @@ The repository implements several graph coloring strategies, including:
     * **Best Improvement:** A greedy local search that selects the move (recoloring a single vertex) that results in the largest reduction in the number of constraint violations (conflicts).
     * **First Improvement:** A local search that accepts the first move (recoloring) that leads to an improvement in the objective function.
 * **Metaheuristics:**
-    * **Simulated Annealing:** A probabilistic technique that explores the solution space, accepting non-improving moves based on a decreasing **Temperature** and a **Cooling Rate** (e.g., $\text{initial\_temperature} = 10$, $\text{cooling\_rate} = 0.9$).
-    * **Genetic Algorithm:** A nature-inspired optimization method that uses concepts like **Population** ($\text{individual\_number} = 100$), **Generations** ($\text{generation\_number} = 500$), and **Mutation Rate** ($\text{mutation\_rate} = 0.05$) to evolve high-quality colorings.
+    * **Simulated Annealing:** A probabilistic technique that explores the solution space, accepting non-improving moves based on a decreasing **Temperature** and a **Cooling Rate** (e.g., `initial_temperature = 10`, `cooling_rate = 0.9`).
+    * **Genetic Algorithm:** A nature-inspired optimization method that uses concepts like **Population** (`individual_number = 100`), **Generations** (`generation_number = 500`), and **Mutation Rate** (`mutation_rate = 0.05`) to evolve high-quality colorings.
 
 Each strategy is implemented as a separate class in the classes/ directory that inherits from the abstract ColoringStrategy class, allowing for easy extension and modification.
 
@@ -59,12 +59,12 @@ Each strategy is implemented as a separate class in the classes/ directory that 
 
 The strategies benchmark was executed on a **specific graph instance**, visualized below.
 
-![Graph used int the problem instance](img/instance_problem.png)
+![Graph used int the problem instance](https://github.com/Jefferson13t/Graph-Coloring-Strategies/blob/main/img/instance_problem.png?raw=true)
 
 ### Benchmark Analysis
 
 The benchmark plot compares the **execution time** and the **number of colors** used by the different strategies to color the graph instance above. The results highlight the **efficiency** of the heuristics relative to the exact methods for this instance:
 
-![Benchmark of the result](img/benchmark.png)
+![Benchmark of the result](https://github.com/Jefferson13t/Graph-Coloring-Strategies/blob/main/img/benchmark.png?raw=true)
 
 Feel free to explore the implementations and contribute with new strategies!
