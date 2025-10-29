@@ -14,18 +14,18 @@ class ColoringStrategiesBenchmark:
         return end_time - start_time
 
 
-    def _plot_execution_times(self, strategies: list[ColoringStrategy], times: dict[str, list[float]], filename: str) -> None:
+    def _plot_execution_times(self, times: dict[str, list[float]], filename: str) -> None:
         plt.figure(figsize=(10, 6))
 
-        all_times = np.concatenate([times[str(strategy)] for strategy in strategies if len(times[str(strategy)]) > 0])
+        all_times = np.concatenate([times[strategy] for strategy in times.keys() if len(times[strategy]) > 0])
         unique_times = np.sort(np.unique(all_times))
 
         if len(unique_times) == 0:
             print("There is no time data to show.")
             return
 
-        for strategy in strategies:
-            strategy_times = np.array(times[str(strategy)])
+        for strategy in times.keys():
+            strategy_times = np.array(times[strategy])
 
             if len(strategy_times) == 0:
                 plt.plot(unique_times, np.zeros_like(unique_times), label=strategy, marker='o')
@@ -56,4 +56,4 @@ class ColoringStrategiesBenchmark:
                 time = self._calculate_strategy_execution_time(strategy, graph, colors)
                 strategy_times[str(strategy)].append(time)
 
-        self._plot_execution_times(strategies, strategy_times, filename)
+        self._plot_execution_times(strategy_times, filename)

@@ -33,7 +33,7 @@ To run this project, follow the steps:
     ```bash
     python main.py
     ```
-    This will create a benchmark plot of the implemented strategies and add it to the `output` folder.
+    This will create a benchmark plot of the implemented strategies and add it to the `img` folder.
 
 **Note:** Make sure you have **Python** installed on your machine before running the project, along with the **`numpy`** and **`matplotlib`** libraries.
 
