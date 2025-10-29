@@ -14,10 +14,10 @@ class ColoringStrategiesBenchmark:
         return end_time - start_time
 
 
-    def _plot_execution_times(self, strategies: list[ColoringStrategy], times: dict[ColoringStrategy, list[float]], filename: str) -> None:
+    def _plot_execution_times(self, strategies: list[ColoringStrategy], times: dict[str, list[float]], filename: str) -> None:
         plt.figure(figsize=(10, 6))
 
-        all_times = np.concatenate([times[strategy] for strategy in strategies if len(times[strategy]) > 0])
+        all_times = np.concatenate([times[str(strategy)] for strategy in strategies if len(times[str(strategy)]) > 0])
         unique_times = np.sort(np.unique(all_times))
 
         if len(unique_times) == 0:
@@ -25,7 +25,7 @@ class ColoringStrategiesBenchmark:
             return
 
         for strategy in strategies:
-            strategy_times = np.array(times[strategy])
+            strategy_times = np.array(times[str(strategy)])
 
             if len(strategy_times) == 0:
                 plt.plot(unique_times, np.zeros_like(unique_times), label=strategy, marker='o')
@@ -45,15 +45,15 @@ class ColoringStrategiesBenchmark:
 
 
     def evaluate_strategies(self, graph: Graph, colors: list[Color], runs: int, filename: str, strategies: list[ColoringStrategy]) -> None:
-        strategy_times: dict[ColoringStrategy, list[float]] = {}
+        strategy_times: dict[str, list[float]] = {}
 
         for strategy in strategies:
-            strategy_times[strategy] = []
+            strategy_times[str(strategy)] = []
 
         for strategy in strategies:
             for i in range(runs):
                 print(f"Evaluating {strategy} iteration {i} of {runs}", end='\r', flush=True)
                 time = self._calculate_strategy_execution_time(strategy, graph, colors)
-                strategy_times[strategy].append(time)
+                strategy_times[str(strategy)].append(time)
 
         self._plot_execution_times(strategies, strategy_times, filename)
